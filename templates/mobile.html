@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ZaenTex</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/themes.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/mobile.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github.min.css">
+    
+    <!-- Device detection -->
+    <script src="{{ url_for('static', filename='js/device-detect.js') }}"></script>
+    
+    <!-- Favicon -->
+    <link rel="manifest" href="/manifest.json">
+    <link rel="icon" href="{{ url_for('static', filename='images/favicon.ico.old') }}">
+
+    <!-- Required for iOS Add to Home Screen -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-title" content="ZaeChat">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+
+</head>
+<body class="mobile">
+    <div class="app-container">
+        <!-- Sidebar overlay -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+        
+        <!-- Collapsible sidebar -->
+        <div class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h1>ZaenTex</h1>
+                <button id="close-sidebar" class="close-sidebar">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <button id="new-chat" class="new-chat-btn">
+                <i class="fas fa-plus"></i> New Chat
+            </button>
+            <div class="chat-list" id="chat-list">
+                <!-- Chat history items will be added here -->
+            </div>
+            <div class="settings">
+                <button id="open-settings" class="settings-btn">
+                    <i class="fas fa-cog"></i> Settings
+                </button>
+            </div>
+        </div>
+
+        <!-- Main chat area -->
+        <div class="chat-container">
+            <div class="mobile-header">
+                <button id="toggle-sidebar" class="toggle-sidebar">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div id="current-chat-name" class="current-chat-name">New Chat</div>
+            </div>
+            
+            <div class="messages" id="messages">
+                <div class="welcome-message">
+                    <h2>Welcome to ZaenTex</h2>
+                    <p>Choose a model from settings and start chatting!</p>
+                </div>
+            </div>
+            
+            <div class="input-area">
+                <form id="message-form">
+                    <textarea id="user-input" placeholder="Type your message here..." rows="1"></textarea>
+                    <button type="submit" id="send-button">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings modal -->
+    <div class="modal-overlay" id="settings-modal">
+        <div class="settings-modal">
+            <div class="settings-header">
+                <h2>Settings</h2>
+                <button class="close-settings" id="close-settings">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="settings-body">
+                <!-- AI Model Selection -->
+                <div class="settings-section">
+                    <h3>AI Model</h3>
+                    <div class="custom-dropdown" id="custom-dropdown">
+                      <div class="selected-option" id="selected-option">Select a model</div>
+                      <div class="dropdown-options" id="dropdown-options">
+                        <div class="optgroup-label">Reasoning Models</div>
+                        <div class="dropdown-option" data-value="ZaenTex.reasoning">ZaenTex.reasoning</div>
+                        <div class="dropdown-option" data-value="ZaenTex.creative">ZaenTex.creative</div>
+                        <div class="dropdown-option" data-value="ZaenTex.math">ZaenTex.math</div>
+
+                        <div class="optgroup-label">Standard Models</div>
+                        <div class="dropdown-option" data-value="ZaenTex.coding">ZaenTex.coding</div>
+                        <div class="dropdown-option" data-value="ZaenTex.general">ZaenTex.general</div>
+          </div>
+
+    <!-- Hidden actual select for backend compatibility -->
+    <select id="model-select" name="model" style="display: none;">
+      <option value="ZaenTex.reasoning"></option>
+      <option value="ZaenTex.creative"></option>
+      <option value="ZaenTex.math"></option>
+      <option value="ZaenTex.coding"></option>
+      <option value="ZaenTex.general"></option>
+    </select>
+  </div>
+
+                </div>
+                
+                <!-- Display Options Section -->
+                <div class="settings-section">
+                    <h3>Display Options</h3>
+                    <div class="toggle-wrapper">
+                        <label class="toggle">
+                            <input type="checkbox" id="reasoning-toggle">
+                            <span class="toggle-slider"></span>
+                        </label>
+                        <span>Show Reasoning</span>
+                    </div>
+                </div>
+                
+                <!-- Theme Section - Light Themes -->
+                <div class="settings-section">
+                    <h3>Light Themes</h3>
+                    <div class="theme-options">
+                        <div class="theme-option theme-light" data-theme="light">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Light</div>
+                        </div>
+                        <div class="theme-option theme-github-light" data-theme="github-light">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">GitHub Light</div>
+                        </div>
+                        <div class="theme-option theme-solarized-light" data-theme="solarized-light">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Solarized</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Theme Section - Dark Themes -->
+                <div class="settings-section">
+                    <h3>Dark Themes</h3>
+                    <div class="theme-options">
+                        <div class="theme-option theme-tokyo-night" data-theme="tokyo-night">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Tokyo Night</div>
+                        </div>
+                        <div class="theme-option theme-dracula" data-theme="dracula">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Dracula</div>
+                        </div>
+                        <div class="theme-option theme-nord" data-theme="nord">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Nord</div>
+                        </div>
+                        <div class="theme-option theme-monokai" data-theme="monokai">
+                            <div class="theme-preview">
+                                <div class="theme-preview-header"></div>
+                                <div class="theme-preview-sidebar">
+                                    <div class="theme-preview-sidebar-inner"></div>
+                                    <div class="theme-preview-content"></div>
+                                </div>
+                            </div>
+                            <div class="theme-name">Monokai</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="settings-footer">
+                <button id="cancel-settings" class="btn btn-secondary">Cancel</button>
+                <button id="save-settings" class="btn btn-primary">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/mobile.js"></script>   
+    <script>
+      const dropdown = document.getElementById("custom-dropdown");
+      const selected = document.getElementById("selected-option");
+      const optionsContainer = document.getElementById("dropdown-options");
+      const hiddenSelect = document.getElementById("model-select");
+
+      selected.addEventListener("click", () => {
+        dropdown.classList.toggle("dropdown-open");
+      });
+
+      document.querySelectorAll(".dropdown-option").forEach(option => {
+        option.addEventListener("click", () => {
+          const value = option.getAttribute("data-value");
+          selected.textContent = option.textContent;
+          hiddenSelect.value = value;
+
+          // Optional: trigger backend form logic
+          hiddenSelect.dispatchEvent(new Event('change'));
+
+          dropdown.classList.remove("dropdown-open");
+        });
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener("click", (e) => {
+        if (!dropdown.contains(e.target)) {
+          dropdown.classList.remove("dropdown-open");
+        }
+      });
+    </script>
+
+</body>
+</html>

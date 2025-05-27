@@ -1,0 +1,94 @@
+/* Tokyo Night theme CSS variables */
+[data-theme="tokyo-night"] {
+    --bg-primary: #1a1b26;
+    --bg-secondary: #24283b;
+    --text-primary: #a9b1d6;
+    --text-secondary: #787c99;
+    --accent: #7aa2f7;
+    --accent-light: #2ac3de;
+    --border-color: #3b4261;
+    --user-message-bg: #2e3c64;
+    --assistant-message-bg: #24283b;
+    --sidebar-bg: #16161e;
+    --sidebar-text: #c0caf5;
+    --sidebar-hover: #292e42;
+    --code-bg: #1e202e;
+    --inline-code-bg: #1e202e;
+    
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #565f89;
+    --syntax-string: #9ece6a;
+    --syntax-keyword: #bb9af7;
+    --syntax-function: #7aa2f7;
+    --syntax-variable: #e0af68;
+    --syntax-operator: #89ddff;
+}
+
+/* Apply Tokyo Night theme to select dropdown */
+[data-theme="tokyo-night"] select {
+    background-color: #1e202e;
+    color: #a9b1d6;
+    border-color: #3b4261;
+}
+
+[data-theme="tokyo-night"] option,
+[data-theme="tokyo-night"] optgroup {
+    background-color: #1e202e;
+    color: #a9b1d6;
+}
+
+/* Apply Tokyo Night theme to input area */
+[data-theme="tokyo-night"] #user-input {
+    background-color: #1e202e;
+    color: #a9b1d6;
+    border-color: #3b4261;
+}
+
+[data-theme="tokyo-night"] #user-input::placeholder {
+    color: #565f89;
+}
+
+/* Apply Tokyo Night code highlighting when theme is active */
+[data-theme="tokyo-night"] .hljs-comment,
+[data-theme="tokyo-night"] .hljs-quote {
+    color: var(--syntax-comment);
+}
+
+[data-theme="tokyo-night"] .hljs-string,
+[data-theme="tokyo-night"] .hljs-regexp {
+    color: var(--syntax-string);
+}
+
+[data-theme="tokyo-night"] .hljs-keyword,
+[data-theme="tokyo-night"] .hljs-selector-tag {
+    color: var(--syntax-keyword);
+}
+
+[data-theme="tokyo-night"] .hljs-function,
+[data-theme="tokyo-night"] .hljs-title {
+    color: var(--syntax-function);
+}
+
+[data-theme="tokyo-night"] .hljs-variable,
+[data-theme="tokyo-night"] .hljs-attr {
+    color: var(--syntax-variable);
+}
+
+[data-theme="tokyo-night"] .hljs-operator,
+[data-theme="tokyo-night"] .hljs-punctuation {
+    color: var(--syntax-operator);
+}
+
+/* Apply Tokyo Night theme to welcome message */
+[data-theme="tokyo-night"] .welcome-message {
+    color: #a9b1d6;
+}
+
+/* Apply Tokyo Night theme to buttons */
+[data-theme="tokyo-night"] #send-button {
+    background-color: #7aa2f7;
+}
+
+[data-theme="tokyo-night"] #send-button:hover {
+    background-color: #5d8df3;
+}

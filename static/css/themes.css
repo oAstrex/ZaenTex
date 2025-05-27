@@ -1,0 +1,474 @@
+
+
+/* GitHub Light theme */
+[data-theme="github-light"] {
+    --bg-primary: #f6f8fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #24292e;
+    --text-secondary: #586069;
+    --accent: #0366d6;
+    --accent-light: #dbedff;
+    --border-color: #e1e4e8;
+    --user-message-bg: #f1f8ff;
+    --assistant-message-bg: #ffffff;
+    --sidebar-bg: #24292e;
+    --sidebar-text: #ffffff;
+    --sidebar-hover: #3f4448;
+    --code-bg: #f6f8fa;
+    --inline-code-bg: #f6f8fa;
+}
+
+/* Solarized Light theme */
+[data-theme="solarized-light"] {
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #eee8d5;
+    --text-primary: #657b83;
+    --text-secondary: #93a1a1;
+    --accent: #268bd2;
+    --accent-light: #eee8d5;
+    --border-color: #eee8d5;
+    --user-message-bg: #eee8d5;
+    --assistant-message-bg: #fdf6e3;
+    --sidebar-bg: #073642;
+    --sidebar-text: #fdf6e3;
+    --sidebar-hover: #002b36;
+    --code-bg: #eee8d5;
+    --inline-code-bg: #eee8d5;
+}
+
+/* Tokyo Night theme */
+[data-theme="tokyo-night"] {
+    --bg-primary: #1a1b26;
+    --bg-secondary: #24283b;
+    --text-primary: #a9b1d6;
+    --text-secondary: #787c99;
+    --accent: #7aa2f7;
+    --accent-light: #2ac3de;
+    --border-color: #3b4261;
+    --user-message-bg: #2e3c64;
+    --assistant-message-bg: #24283b;
+    --sidebar-bg: #16161e;
+    --sidebar-text: #c0caf5;
+    --sidebar-hover: #292e42;
+    --code-bg: #1e202e;
+    --inline-code-bg: #1e202e;
+    
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #565f89;
+    --syntax-string: #9ece6a;
+    --syntax-keyword: #bb9af7;
+    --syntax-function: #7aa2f7;
+    --syntax-variable: #e0af68;
+    --syntax-operator: #89ddff;
+}
+
+/* Dracula theme */
+[data-theme="dracula"] {
+    --bg-primary: #282a36;
+    --bg-secondary: #44475a;
+    --text-primary: #f8f8f2;
+    --text-secondary: #bd93f9;
+    --accent: #ff79c6;
+    --accent-light: #6272a4;
+    --border-color: #44475a;
+    --user-message-bg: #44475a;
+    --assistant-message-bg: #282a36;
+    --sidebar-bg: #282a36;
+    --sidebar-text: #f8f8f2;
+    --sidebar-hover: #44475a;
+    --code-bg: #44475a;
+    --inline-code-bg: #44475a;
+    
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #6272a4;
+    --syntax-string: #f1fa8c;
+    --syntax-keyword: #ff79c6;
+    --syntax-function: #50fa7b;
+    --syntax-variable: #8be9fd;
+    --syntax-operator: #bd93f9;
+}
+
+/* Nord theme */
+[data-theme="nord"] {
+    --bg-primary: #2e3440;
+    --bg-secondary: #3b4252;
+    --text-primary: #eceff4;
+    --text-secondary: #d8dee9;
+    --accent: #88c0d0;
+    --accent-light: #81a1c1;
+    --border-color: #3b4252;
+    --user-message-bg: #4c566a;
+    --assistant-message-bg: #3b4252;
+    --sidebar-bg: #2e3440;
+    --sidebar-text: #eceff4;
+    --sidebar-hover: #434c5e;
+    --code-bg: #3b4252;
+    --inline-code-bg: #3b4252;
+    
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #616e88;
+    --syntax-string: #a3be8c;
+    --syntax-keyword: #b48ead;
+    --syntax-function: #88c0d0;
+    --syntax-variable: #d08770;
+    --syntax-operator: #81a1c1;
+}
+
+/* Monokai theme */
+[data-theme="monokai"] {
+    --bg-primary: #272822;
+    --bg-secondary: #383830;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a6e22e;
+    --accent: #f92672;
+    --accent-light: #ae81ff;
+    --border-color: #383830;
+    --user-message-bg: #3e3d32;
+    --assistant-message-bg: #272822;
+    --sidebar-bg: #272822;
+    --sidebar-text: #f8f8f2;
+    --sidebar-hover: #3e3d32;
+    --code-bg: #3e3d32;
+    --inline-code-bg: #3e3d32;
+    
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #75715e;
+    --syntax-string: #e6db74;
+    --syntax-keyword: #f92672;
+    --syntax-function: #a6e22e;
+    --syntax-variable: #66d9ef;
+    --syntax-operator: #ae81ff;
+}
+
+/* Apply theme styling to form elements */
+[data-theme] select,
+[data-theme] .settings-select {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme] option,
+[data-theme] optgroup {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+[data-theme] #user-input {
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+    border-color: var(--border-color);
+}
+
+[data-theme] #user-input::placeholder {
+    color: var(--text-secondary);
+    opacity: 0.7;
+}
+
+/* Apply theme styling to buttons */
+[data-theme] #send-button {
+    background-color: var(--accent);
+}
+
+[data-theme] #send-button:hover {
+    background-color: var(--accent-light);
+}
+
+/* Apply theme styling to think blocks */
+[data-theme] .think-block {
+    background-color: var(--bg-secondary);
+    border-left: 3px solid var(--accent);
+    color: var(--text-secondary);
+}
+
+/* Apply syntax highlighting for code blocks based on theme */
+[data-theme] .hljs-comment,
+[data-theme] .hljs-quote {
+    color: var(--syntax-comment, #75715e);
+}
+
+[data-theme] .hljs-string,
+[data-theme] .hljs-regexp {
+    color: var(--syntax-string, #e6db74);
+}
+
+[data-theme] .hljs-keyword,
+[data-theme] .hljs-selector-tag {
+    color: var(--syntax-keyword, #f92672);
+}
+
+[data-theme] .hljs-function,
+[data-theme] .hljs-title {
+    color: var(--syntax-function, #a6e22e);
+}
+
+[data-theme] .hljs-variable,
+[data-theme] .hljs-attr {
+    color: var(--syntax-variable, #66d9ef);
+}
+
+[data-theme] .hljs-operator,
+[data-theme] .hljs-punctuation {
+    color: var(--syntax-operator, #ae81ff);
+}
+
+/* Apply theme styling to welcome message */
+[data-theme] .welcome-message {
+    color: var(--text-secondary);
+}
+
+/* ===== EXISTING THEMES ===== */
+/* Keep all your existing theme definitions here */
+
+/* ===== NEW LIGHT THEMES ===== */
+
+/* Atom One Light Theme */
+[data-theme="atom-light"] {
+    --bg-primary: #fafafa;
+    --bg-secondary: #f4f4f4;
+    --text-primary: #383a42;
+    --text-secondary: #696c77;
+    --accent-color: #4078f2;
+    --link-color: #4078f2;
+    --border-color: #d0d0d0;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    
+    /* Sidebar */
+    --sidebar-bg: #e5e5e6;
+    --sidebar-text: #383a42;
+    --sidebar-border: #c6c8d0;
+    --sidebar-item-hover: #d8d8d8;
+    --sidebar-item-active: #d0d2d8;
+    
+    /* Messages */
+    --message-user-bg: #e1e2e5;
+    --message-assistant-bg: #f4f5f8;
+    --code-bg: #f0f0f0;
+    --think-bg: rgba(219, 219, 219, 0.7);
+    --code-block-bg: #f6f8fa;
+}
+
+/* VS Code Light Theme */
+[data-theme="vscode-light"] {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f3f3;
+    --text-primary: #1e1e1e;
+    --text-secondary: #5a5a5a;
+    --accent-color: #0066b8;
+    --link-color: #006ab1;
+    --border-color: #d4d4d4;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    
+    /* Sidebar */
+    --sidebar-bg: #f3f3f3;
+    --sidebar-text: #333333;
+    --sidebar-border: #cecece;
+    --sidebar-item-hover: #e8e8e8;
+    --sidebar-item-active: #dadada;
+    
+    /* Messages */
+    --message-user-bg: #dcebfc;
+    --message-assistant-bg: #f5f5f5;
+    --code-bg: #f3f3f3;
+    --think-bg: rgba(230, 230, 230, 0.7);
+    --code-block-bg: #f3f3f3;
+}
+
+/* Minty Fresh Theme */
+[data-theme="minty-fresh"] {
+    --bg-primary: #f5fffa;
+    --bg-secondary: #e6f7ef;
+    --text-primary: #2e5947;
+    --text-secondary: #598676;
+    --accent-color: #2eb885;
+    --link-color: #30a46c;
+    --border-color: #c2e6d3;
+    --shadow-color: rgba(46, 184, 133, 0.1);
+    
+    /* Sidebar */
+    --sidebar-bg: #e6f7ef;
+    --sidebar-text: #2e5947;
+    --sidebar-border: #c2e6d3;
+    --sidebar-item-hover: #d1eadc;
+    --sidebar-item-active: #b1dcca;
+    
+    /* Messages */
+    --message-user-bg: #d1eadc;
+    --message-assistant-bg: #e6f7ef;
+    --code-bg: #e0f5ec;
+    --think-bg: rgba(194, 230, 211, 0.7);
+    --code-block-bg: #e0f5ec;
+}
+
+/* Lavender Light Theme */
+[data-theme="lavender-light"] {
+    --bg-primary: #fbfaff;
+    --bg-secondary: #f3f0ff;
+    --text-primary: #453c67;
+    --text-secondary: #6e6a8f;
+    --accent-color: #8a70d6;
+    --link-color: #7c66c6;
+    --border-color: #dcd6f7;
+    --shadow-color: rgba(138, 112, 214, 0.1);
+    
+    /* Sidebar */
+    --sidebar-bg: #f3f0ff;
+    --sidebar-text: #453c67;
+    --sidebar-border: #dcd6f7;
+    --sidebar-item-hover: #e8e3fa;
+    --sidebar-item-active: #dcd6f7;
+    
+    /* Messages */
+    --message-user-bg: #e8e3fa;
+    --message-assistant-bg: #f3f0ff;
+    --code-bg: #eeeaf9;
+    --think-bg: rgba(220, 214, 247, 0.7);
+    --code-block-bg: #eeeaf9;
+}
+
+/* ===== NEW DARK THEMES ===== */
+
+/* Material Dark Theme */
+[data-theme="material-dark"] {
+    --bg-primary: #263238;
+    --bg-secondary: #1e272c;
+    --text-primary: #eeffff;
+    --text-secondary: #b0bec5;
+    --accent-color: #89ddff;
+    --link-color: #82aaff;
+    --border-color: #37474f;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* Sidebar */
+    --sidebar-bg: #1e272c;
+    --sidebar-text: #eeffff;
+    --sidebar-border: #37474f;
+    --sidebar-item-hover: #314549;
+    --sidebar-item-active: #37474f;
+    
+    /* Messages */
+    --message-user-bg: #314549;
+    --message-assistant-bg: #1e272c;
+    --code-bg: #1a2327;
+    --think-bg: rgba(55, 71, 79, 0.7);
+    --code-block-bg: #1a2327;
+}
+
+/* One Dark Theme */
+[data-theme="one-dark"] {
+    --bg-primary: #282c34;
+    --bg-secondary: #21252b;
+    --text-primary: #abb2bf;
+    --text-secondary: #828997;
+    --accent-color: #61afef;
+    --link-color: #61afef;
+    --border-color: #3b4048;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* Sidebar */
+    --sidebar-bg: #21252b;
+    --sidebar-text: #abb2bf;
+    --sidebar-border: #3b4048;
+    --sidebar-item-hover: #2c313a;
+    --sidebar-item-active: #3b4048;
+    
+    /* Messages */
+    --message-user-bg: #2c313a;
+    --message-assistant-bg: #21252b;
+    --code-bg: #1e2227;
+    --think-bg: rgba(59, 64, 72, 0.7);
+    --code-block-bg: #1e2227;
+}
+
+/* VS Code Dark Theme */
+[data-theme="vscode-dark"] {
+    --bg-primary: #1e1e1e;
+    --bg-secondary: #252526;
+    --text-primary: #d4d4d4;
+    --text-secondary: #a0a0a0;
+    --accent-color: #0e639c;
+    --link-color: #3794ff;
+    --border-color: #3c3c3c;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    
+    /* Sidebar */
+    --sidebar-bg: #252526;
+    --sidebar-text: #d4d4d4;
+    --sidebar-border: #3c3c3c;
+    --sidebar-item-hover: #2a2d2e;
+    --sidebar-item-active: #37373d;
+    
+    /* Messages */
+    --message-user-bg: #2a2d2e;
+    --message-assistant-bg: #252526;
+    --code-bg: #1e1e1e;
+    --think-bg: rgba(60, 60, 60, 0.7);
+    --code-block-bg: #1e1e1e;
+}
+
+/* Deep Ocean Theme */
+[data-theme="deep-ocean"] {
+    --bg-primary: #0f111a;
+    --bg-secondary: #090b10;
+    --text-primary: #8f93a2;
+    --text-secondary: #717cb4;
+    --accent-color: #84ffff;
+    --link-color: #80cbc4;
+    --border-color: #1a1c25;
+    --shadow-color: rgba(0, 0, 0, 0.5);
+    
+    /* Sidebar */
+    --sidebar-bg: #090b10;
+    --sidebar-text: #8f93a2;
+    --sidebar-border: #1a1c25;
+    --sidebar-item-hover: #131622;
+    --sidebar-item-active: #1a1c25;
+    
+    /* Messages */
+    --message-user-bg: #131622;
+    --message-assistant-bg: #090b10;
+    --code-bg: #070910;
+    --think-bg: rgba(26, 28, 37, 0.7);
+    --code-block-bg: #070910;
+}
+
+/* Theme preview styling for all new themes */
+.theme-atom-light .theme-preview-header { background-color: #e5e5e6; }
+.theme-atom-light .theme-preview-sidebar { background-color: #f4f4f4; }
+.theme-atom-light .theme-preview-sidebar-inner { background-color: #e1e2e5; }
+.theme-atom-light .theme-preview-content { background-color: #fafafa; }
+
+.theme-vscode-light .theme-preview-header { background-color: #f3f3f3; }
+.theme-vscode-light .theme-preview-sidebar { background-color: #f3f3f3; }
+.theme-vscode-light .theme-preview-sidebar-inner { background-color: #dcebfc; }
+.theme-vscode-light .theme-preview-content { background-color: #ffffff; }
+
+.theme-minty-fresh .theme-preview-header { background-color: #e6f7ef; }
+.theme-minty-fresh .theme-preview-sidebar { background-color: #e6f7ef; }
+.theme-minty-fresh .theme-preview-sidebar-inner { background-color: #d1eadc; }
+.theme-minty-fresh .theme-preview-content { background-color: #f5fffa; }
+
+.theme-lavender-light .theme-preview-header { background-color: #f3f0ff; }
+.theme-lavender-light .theme-preview-sidebar { background-color: #f3f0ff; }
+.theme-lavender-light .theme-preview-sidebar-inner { background-color: #e8e3fa; }
+.theme-lavender-light .theme-preview-content { background-color: #fbfaff; }
+
+.theme-material-dark .theme-preview-header { background-color: #1e272c; }
+.theme-material-dark .theme-preview-sidebar { background-color: #1e272c; }
+.theme-material-dark .theme-preview-sidebar-inner { background-color: #314549; }
+.theme-material-dark .theme-preview-content { background-color: #263238; }
+
+.theme-one-dark .theme-preview-header { background-color: #21252b; }
+.theme-one-dark .theme-preview-sidebar { background-color: #21252b; }
+.theme-one-dark .theme-preview-sidebar-inner { background-color: #2c313a; }
+.theme-one-dark .theme-preview-content { background-color: #282c34; }
+
+.theme-vscode-dark .theme-preview-header { background-color: #252526; }
+.theme-vscode-dark .theme-preview-sidebar { background-color: #252526; }
+.theme-vscode-dark .theme-preview-sidebar-inner { background-color: #2a2d2e; }
+.theme-vscode-dark .theme-preview-content { background-color: #1e1e1e; }
+
+.theme-deep-ocean .theme-preview-header { background-color: #090b10; }
+.theme-deep-ocean .theme-preview-sidebar { background-color: #090b10; }
+.theme-deep-ocean .theme-preview-sidebar-inner { background-color: #131622; }
+.theme-deep-ocean .theme-preview-content { background-color: #0f111a; }
