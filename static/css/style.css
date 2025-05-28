@@ -409,6 +409,42 @@ input:checked + .toggle-slider:before {
     background-color: var(--bg-primary);
 }
 
+/* Model reasoning styling */
+.message-content details {
+    margin: 1rem 0;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--bg-secondary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.message-content details summary {
+    padding: 8px 12px;
+    background-color: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    transition: background-color 0.2s;
+}
+
+.message-content details summary:hover {
+    background-color: var(--accent-light);
+}
+
+.message-content details[open] summary {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.message-content details > div {
+    padding: 12px 16px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    white-space: pre-wrap;
+}
+
 .input-area {
     padding: 11.5px;
     background-color: var(--bg-secondary);
@@ -850,4 +886,3 @@ input:checked + .toggle-slider:before {
     background-color: #383830;
     color: #f8f8f2;
 }
-
