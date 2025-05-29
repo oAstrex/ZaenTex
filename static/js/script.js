@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load theme preference
     const savedTheme = localStorage.getItem('chatTheme') || 'light';
     document.documentElement.setAttribute('data-theme', savedTheme);
+    updateCodeBlockStyles(savedTheme);
     
     // Load reasoning toggle preference
     const savedShowReasoning = localStorage.getItem('showReasoning') === 'true';
@@ -102,6 +103,22 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!isHljsLoaded) {
         console.error('Warning: Highlight.js library not loaded. Syntax highlighting will be disabled.');
     }
+
+    // Initialize highlight.js
+    document.querySelectorAll('pre code').forEach(block => {
+        hljs.highlightElement(block);
+    });
+
+    // Re-apply theme-appropriate styles when theme changes
+    themeOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            setTimeout(() => {
+                document.querySelectorAll('pre code').forEach(block => {
+                    hljs.highlightElement(block);
+                });
+            }, 100);
+        });
+    });
     
     // Configure marked options if available
     if (isMarkedLoaded) {
@@ -117,6 +134,52 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
+    // Add copy button to all code blocks
+    function addCopyButtonsToCodeBlocks() {
+        const codeBlocks = document.querySelectorAll('pre code');
+        codeBlocks.forEach(codeBlock => {
+            // Check if the code block already has a copy button
+            if (codeBlock.parentNode.querySelector('.copy-button')) return;
+
+            // Create the copy button
+            const copyButton = document.createElement('button');
+            copyButton.className = 'copy-button';
+            copyButton.innerHTML = '<i class="fas fa-copy"></i> Copy';
+            copyButton.title = "Copy code to clipboard";
+
+            // Add the button to the parent pre element
+            codeBlock.parentNode.insertBefore(copyButton, codeBlock);
+
+            // Add click event
+            copyButton.addEventListener('click', () => {
+                const code = codeBlock.textContent;
+                copyToClipboard(code, copyButton);
+            });
+        });
+    }
+
+    // Function to copy text to clipboard
+    function copyToClipboard(text, button) {
+        navigator.clipboard.writeText(text).then(() => {
+            // Visual feedback
+            button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+            button.classList.add('copied');
+
+            // Reset button after 2 seconds
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+                button.classList.remove('copied');
+            }, 2000);
+        }).catch(err => {
+            console.error('Could not copy text: ', err);
+            button.innerHTML = '<i class="fas fa-times"></i> Failed!';
+
+            setTimeout(() => {
+                button.innerHTML = '<i class="fas fa-copy"></i> Copy';
+            }, 2000);
+        });
+    }
+
     // Elements
     const chatList = document.getElementById('chat-list');
     const messageForm = document.getElementById('message-form');
@@ -129,7 +192,34 @@ document.addEventListener('DOMContentLoaded', () => {
     let chats = [];
     let currentChatId = null;
     let activeEventSource = null;
-    
+
+    function updateCodeBlockStyles(theme) {
+        // Map themes to highlight.js styles if needed
+        const highlightThemeMap = {
+            'light': 'github',
+            'github-light': 'github',
+            'tokyo-night': 'atom-one-dark',
+            'dracula': 'dracula',
+            'nord': 'nord',
+            'monokai': 'monokai',
+            // Add mappings for other themes as needed
+        };
+
+        const highlightTheme = highlightThemeMap[theme] || 'github';
+
+        // Remove existing highlight.js stylesheet
+        const existingStylesheet = document.querySelector('link[href*="highlight.js"]');
+        if (existingStylesheet) {
+            existingStylesheet.remove();
+        }
+
+        // Add new stylesheet based on theme
+        const newStylesheet = document.createElement('link');
+        newStylesheet.rel = 'stylesheet';
+        newStylesheet.href = `https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/${highlightTheme}.min.css`;
+        document.head.appendChild(newStylesheet);
+    }
+
     // Debug indicator
     const debugIndicator = document.createElement('div');
     debugIndicator.style.position = 'fixed';
@@ -361,6 +451,9 @@ document.addEventListener('DOMContentLoaded', () => {
             messagesContainer.appendChild(messageElement);
         });
         
+        // Add copy buttons to all code blocks
+        addCopyButtonsToCodeBlocks();
+
         // Scroll to bottom
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
@@ -515,6 +608,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     // If something went wrong with the placeholder, render all messages
                     renderMessages(chat.messages);
                 }
+
+                // Add copy buttons to all code blocks
+                addCopyButtonsToCodeBlocks();
             })
             .catch(error => {
                 console.error('Error:', error);
@@ -675,6 +771,9 @@ document.addEventListener('DOMContentLoaded', () => {
                                             });
                                         }
                                         
+                                        // Add copy buttons to new code blocks
+                                        addCopyButtonsToCodeBlocks();
+
                                         // Scroll to bottom
                                         messagesContainer.scrollTop = messagesContainer.scrollHeight;
                                     }

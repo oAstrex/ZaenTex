@@ -1,144 +1,4 @@
-
-
-/* GitHub Light theme */
-[data-theme="github-light"] {
-    --bg-primary: #f6f8fa;
-    --bg-secondary: #ffffff;
-    --text-primary: #24292e;
-    --text-secondary: #586069;
-    --accent: #0366d6;
-    --accent-light: #dbedff;
-    --border-color: #e1e4e8;
-    --user-message-bg: #f1f8ff;
-    --assistant-message-bg: #ffffff;
-    --sidebar-bg: #24292e;
-    --sidebar-text: #ffffff;
-    --sidebar-hover: #3f4448;
-    --code-bg: #f6f8fa;
-    --inline-code-bg: #f6f8fa;
-}
-
-/* Solarized Light theme */
-[data-theme="solarized-light"] {
-    --bg-primary: #fdf6e3;
-    --bg-secondary: #eee8d5;
-    --text-primary: #657b83;
-    --text-secondary: #93a1a1;
-    --accent: #268bd2;
-    --accent-light: #eee8d5;
-    --border-color: #eee8d5;
-    --user-message-bg: #eee8d5;
-    --assistant-message-bg: #fdf6e3;
-    --sidebar-bg: #073642;
-    --sidebar-text: #fdf6e3;
-    --sidebar-hover: #002b36;
-    --code-bg: #eee8d5;
-    --inline-code-bg: #eee8d5;
-}
-
-/* Tokyo Night theme */
-[data-theme="tokyo-night"] {
-    --bg-primary: #1a1b26;
-    --bg-secondary: #24283b;
-    --text-primary: #a9b1d6;
-    --text-secondary: #787c99;
-    --accent: #7aa2f7;
-    --accent-light: #2ac3de;
-    --border-color: #3b4261;
-    --user-message-bg: #2e3c64;
-    --assistant-message-bg: #24283b;
-    --sidebar-bg: #16161e;
-    --sidebar-text: #c0caf5;
-    --sidebar-hover: #292e42;
-    --code-bg: #1e202e;
-    --inline-code-bg: #1e202e;
-    
-    /* Syntax highlighting colors for code blocks */
-    --syntax-comment: #565f89;
-    --syntax-string: #9ece6a;
-    --syntax-keyword: #bb9af7;
-    --syntax-function: #7aa2f7;
-    --syntax-variable: #e0af68;
-    --syntax-operator: #89ddff;
-}
-
-/* Dracula theme */
-[data-theme="dracula"] {
-    --bg-primary: #282a36;
-    --bg-secondary: #44475a;
-    --text-primary: #f8f8f2;
-    --text-secondary: #bd93f9;
-    --accent: #ff79c6;
-    --accent-light: #6272a4;
-    --border-color: #44475a;
-    --user-message-bg: #44475a;
-    --assistant-message-bg: #282a36;
-    --sidebar-bg: #282a36;
-    --sidebar-text: #f8f8f2;
-    --sidebar-hover: #44475a;
-    --code-bg: #44475a;
-    --inline-code-bg: #44475a;
-    
-    /* Syntax highlighting colors for code blocks */
-    --syntax-comment: #6272a4;
-    --syntax-string: #f1fa8c;
-    --syntax-keyword: #ff79c6;
-    --syntax-function: #50fa7b;
-    --syntax-variable: #8be9fd;
-    --syntax-operator: #bd93f9;
-}
-
-/* Nord theme */
-[data-theme="nord"] {
-    --bg-primary: #2e3440;
-    --bg-secondary: #3b4252;
-    --text-primary: #eceff4;
-    --text-secondary: #d8dee9;
-    --accent: #88c0d0;
-    --accent-light: #81a1c1;
-    --border-color: #3b4252;
-    --user-message-bg: #4c566a;
-    --assistant-message-bg: #3b4252;
-    --sidebar-bg: #2e3440;
-    --sidebar-text: #eceff4;
-    --sidebar-hover: #434c5e;
-    --code-bg: #3b4252;
-    --inline-code-bg: #3b4252;
-    
-    /* Syntax highlighting colors for code blocks */
-    --syntax-comment: #616e88;
-    --syntax-string: #a3be8c;
-    --syntax-keyword: #b48ead;
-    --syntax-function: #88c0d0;
-    --syntax-variable: #d08770;
-    --syntax-operator: #81a1c1;
-}
-
-/* Monokai theme */
-[data-theme="monokai"] {
-    --bg-primary: #272822;
-    --bg-secondary: #383830;
-    --text-primary: #f8f8f2;
-    --text-secondary: #a6e22e;
-    --accent: #f92672;
-    --accent-light: #ae81ff;
-    --border-color: #383830;
-    --user-message-bg: #3e3d32;
-    --assistant-message-bg: #272822;
-    --sidebar-bg: #272822;
-    --sidebar-text: #f8f8f2;
-    --sidebar-hover: #3e3d32;
-    --code-bg: #3e3d32;
-    --inline-code-bg: #3e3d32;
-    
-    /* Syntax highlighting colors for code blocks */
-    --syntax-comment: #75715e;
-    --syntax-string: #e6db74;
-    --syntax-keyword: #f92672;
-    --syntax-function: #a6e22e;
-    --syntax-variable: #66d9ef;
-    --syntax-operator: #ae81ff;
-}
+/* ===== CORE THEME STRUCTURE ===== */
 
 /* Apply theme styling to form elements */
 [data-theme] select,
@@ -217,10 +77,85 @@
     color: var(--text-secondary);
 }
 
-/* ===== EXISTING THEMES ===== */
-/* Keep all your existing theme definitions here */
+/* ===== LIGHT THEMES ===== */
 
-/* ===== NEW LIGHT THEMES ===== */
+/* GitHub Light theme */
+[data-theme="github-light"] {
+    --bg-primary: #f6f8fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #24292e;
+    --text-secondary: #586069;
+    --accent: #0366d6;
+    --accent-light: #dbedff;
+    --border-color: #e1e4e8;
+    --user-message-bg: #f1f8ff;
+    --assistant-message-bg: #ffffff;
+    --sidebar-bg: #24292e;
+    --sidebar-text: #ffffff;
+    --sidebar-hover: #3f4448;
+    --code-bg: #f6f8fa;
+    --inline-code-bg: #f6f8fa;
+
+    --syntax-comment: #6a737d;
+    --syntax-string: #032f62;
+    --syntax-keyword: #d73a49;
+    --syntax-function: #6f42c1;
+    --syntax-variable: #005cc5;
+    --syntax-operator: #d73a49;
+    --syntax-text: #24292e;
+}
+
+/* Solarized Light theme */
+[data-theme="solarized-light"] {
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #eee8d5;
+    --text-primary: #657b83;
+    --text-secondary: #93a1a1;
+    --accent: #268bd2;
+    --accent-light: #eee8d5;
+    --border-color: #eee8d5;
+    --user-message-bg: #eee8d5;
+    --assistant-message-bg: #fdf6e3;
+    --sidebar-bg: #073642;
+    --sidebar-text: #fdf6e3;
+    --sidebar-hover: #002b36;
+    --code-bg: #eee8d5;
+    --inline-code-bg: #eee8d5;
+
+    --syntax-comment: #93a1a1;
+    --syntax-string: #2aa198;
+    --syntax-keyword: #859900;
+    --syntax-function: #268bd2;
+    --syntax-variable: #cb4b16;
+    --syntax-operator: #6c71c4;
+    --syntax-text: #657b83;
+}
+
+/* Solarized Light - Alternate */
+[data-theme="solarized-light-alt"] {
+    --bg-primary: #fdf6e3;
+    --bg-secondary: #eee8d5;
+    --text-primary: #586e75;
+    --text-secondary: #839496;
+    --accent: #dc322f;
+    --accent-light: #f5d7d6;
+    --border-color: #eee8d5;
+    --user-message-bg: #eee8d5;
+    --assistant-message-bg: #fdf6e3;
+    --sidebar-bg: #073642;
+    --sidebar-text: #fdf6e3;
+    --sidebar-hover: #002b36;
+    --code-bg: #eee8d5;
+    --inline-code-bg: #eee8d5;
+
+    --syntax-comment: #93a1a1;
+    --syntax-string: #2aa198;
+    --syntax-keyword: #cb4b16;
+    --syntax-function: #268bd2;
+    --syntax-variable: #d33682;
+    --syntax-operator: #859900;
+    --syntax-text: #586e75;
+}
 
 /* Atom One Light Theme */
 [data-theme="atom-light"] {
@@ -232,20 +167,31 @@
     --link-color: #4078f2;
     --border-color: #d0d0d0;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    
-    /* Sidebar */
+    --accent: #4078f2;
+    --sidebar-hover: #d8d8d8;
     --sidebar-bg: #e5e5e6;
     --sidebar-text: #383a42;
+    --accent-light: #c3dcff;
+    --syntax-text: #383a42;
+
+    /* Sidebar */
     --sidebar-border: #c6c8d0;
     --sidebar-item-hover: #d8d8d8;
     --sidebar-item-active: #d0d2d8;
-    
+
     /* Messages */
     --message-user-bg: #e1e2e5;
     --message-assistant-bg: #f4f5f8;
     --code-bg: #f0f0f0;
     --think-bg: rgba(219, 219, 219, 0.7);
     --code-block-bg: #f6f8fa;
+
+    --syntax-comment: #a0a1a7;
+    --syntax-string: #50a14f;
+    --syntax-keyword: #a626a4;
+    --syntax-function: #4078f2;
+    --syntax-variable: #986801;
+    --syntax-operator: #d19a66;
 }
 
 /* VS Code Light Theme */
@@ -258,20 +204,31 @@
     --link-color: #006ab1;
     --border-color: #d4d4d4;
     --shadow-color: rgba(0, 0, 0, 0.1);
-    
-    /* Sidebar */
+    --accent: #0066b8;
+    --sidebar-hover: #e8e8e8;
     --sidebar-bg: #f3f3f3;
     --sidebar-text: #333333;
+    --accent-light: #b3d6f2;
+    --syntax-text: #1e1e1e;
+
+    /* Sidebar */
     --sidebar-border: #cecece;
     --sidebar-item-hover: #e8e8e8;
     --sidebar-item-active: #dadada;
-    
+
     /* Messages */
     --message-user-bg: #dcebfc;
     --message-assistant-bg: #f5f5f5;
     --code-bg: #f3f3f3;
     --think-bg: rgba(230, 230, 230, 0.7);
     --code-block-bg: #f3f3f3;
+
+    --syntax-comment: #008000;
+    --syntax-string: #a31515;
+    --syntax-keyword: #0000ff;
+    --syntax-function: #795e26;
+    --syntax-variable: #001080;
+    --syntax-operator: #0000ff;
 }
 
 /* Minty Fresh Theme */
@@ -284,20 +241,31 @@
     --link-color: #30a46c;
     --border-color: #c2e6d3;
     --shadow-color: rgba(46, 184, 133, 0.1);
-    
-    /* Sidebar */
+    --accent: #2eb885;
+    --sidebar-hover: #d1eadc;
     --sidebar-bg: #e6f7ef;
     --sidebar-text: #2e5947;
+    --accent-light: #89e0bc;
+    --syntax-text: #2d3748;
+
+    /* Sidebar */
     --sidebar-border: #c2e6d3;
     --sidebar-item-hover: #d1eadc;
     --sidebar-item-active: #b1dcca;
-    
+
     /* Messages */
     --message-user-bg: #d1eadc;
     --message-assistant-bg: #e6f7ef;
     --code-bg: #e0f5ec;
     --think-bg: rgba(194, 230, 211, 0.7);
     --code-block-bg: #e0f5ec;
+
+    --syntax-comment: #8aa29e;
+    --syntax-string: #3a7d44;
+    --syntax-keyword: #1e6091;
+    --syntax-function: #4b644a;
+    --syntax-variable: #43766c;
+    --syntax-operator: #5f7470;
 }
 
 /* Lavender Light Theme */
@@ -310,23 +278,272 @@
     --link-color: #7c66c6;
     --border-color: #dcd6f7;
     --shadow-color: rgba(138, 112, 214, 0.1);
-    
-    /* Sidebar */
+    --accent: #8a70d6;
+    --sidebar-hover: #e8e3fa;
     --sidebar-bg: #f3f0ff;
     --sidebar-text: #453c67;
+    --accent-light: #bfb2e8;
+
+    /* Sidebar */
     --sidebar-border: #dcd6f7;
     --sidebar-item-hover: #e8e3fa;
     --sidebar-item-active: #dcd6f7;
-    
+
     /* Messages */
     --message-user-bg: #e8e3fa;
     --message-assistant-bg: #f3f0ff;
     --code-bg: #eeeaf9;
     --think-bg: rgba(220, 214, 247, 0.7);
     --code-block-bg: #eeeaf9;
+
+    --syntax-comment: #9e9cb0;
+    --syntax-string: #9370db;
+    --syntax-keyword: #8a2be2;
+    --syntax-function: #6a5acd;
+    --syntax-variable: #9f5fff;
+    --syntax-operator: #845ef7;
+    --syntax-text: #44337a;
 }
 
-/* ===== NEW DARK THEMES ===== */
+/* Rosé Pine Dawn Theme */
+[data-theme="rose-pine-dawn"] {
+    --bg-primary: #faf4ed;
+    --bg-secondary: #fffaf3;
+    --text-primary: #575279;
+    --text-secondary: #797593;
+    --accent: #d7827e;
+    --accent-light: #ebbcba;
+    --border-color: #f2e9e1;
+    --user-message-bg: #f2e9de;
+    --assistant-message-bg: #fffaf3;
+    --sidebar-bg: #f2e9e1;
+    --sidebar-text: #575279;
+    --sidebar-hover: #e6ded7;
+    --code-bg: #f4ede8;
+    --inline-code-bg: #f4ede8;
+
+    --syntax-comment: #9893a5;
+    --syntax-string: #56949f;
+    --syntax-keyword: #907aa9;
+    --syntax-function: #d7827e;
+    --syntax-variable: #ea9d34;
+    --syntax-operator: #286983;
+    --syntax-text: #575279;
+}
+
+/* Ayu Light Theme */
+[data-theme="ayu-light"] {
+    --bg-primary: #fafafa;
+    --bg-secondary: #f3f3f3;
+    --text-primary: #5c6166;
+    --text-secondary: #828c99;
+    --accent: #ff9940;
+    --accent-light: #ffc27d;
+    --border-color: #e7e7e7;
+    --user-message-bg: #f3f3f3;
+    --assistant-message-bg: #fafafa;
+    --sidebar-bg: #e7e7e7;
+    --sidebar-text: #5c6166;
+    --sidebar-hover: #d9d9d9;
+    --code-bg: #f0f0f0;
+    --inline-code-bg: #f0f0f0;
+
+    --syntax-comment: #787b80;
+    --syntax-string: #86b300;
+    --syntax-keyword: #fa8d3e;
+    --syntax-function: #f29718;
+    --syntax-variable: #55b4d4;
+    --syntax-operator: #ed9366;
+    --syntax-text: #5c6773;
+}
+
+/* Everforest Light */
+[data-theme="everforest-light"] {
+    --bg-primary: #fff9e8;
+    --bg-secondary: #fdf6e3;
+    --text-primary: #5c6a72;
+    --text-secondary: #859289;
+    --accent: #df69ba;
+    --accent-light: #f5c9df;
+    --border-color: #e6e1c5;
+    --user-message-bg: #ede5d4;
+    --assistant-message-bg: #fdf6e3;
+    --sidebar-bg: #ede5d4;
+    --sidebar-text: #5c6a72;
+    --sidebar-hover: #e4dccb;
+    --code-bg: #f3efdd;
+    --inline-code-bg: #f3efdd;
+
+    --syntax-comment: #93a4a6;
+    --syntax-string: #8da101;
+    --syntax-keyword: #df69ba;
+    --syntax-function: #3a94c5;
+    --syntax-variable: #df69ba;
+    --syntax-operator: #df69ba;
+    --syntax-text: #5c6a72;
+}
+
+/* Paper Theme */
+[data-theme="paper"] {
+    --bg-primary: #f8f8f8;
+    --bg-secondary: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #666666;
+    --accent: #4285f4;
+    --accent-light: #e8f0fe;
+    --border-color: #e0e0e0;
+    --user-message-bg: #f1f3f4;
+    --assistant-message-bg: #ffffff;
+    --sidebar-bg: #f1f3f4;
+    --sidebar-text: #333333;
+    --sidebar-hover: #e6e8ea;
+    --code-bg: #f8f9fa;
+    --inline-code-bg: #f8f9fa;
+
+    --syntax-comment: #80868b;
+    --syntax-string: #0d904f;
+    --syntax-keyword: #ea4335;
+    --syntax-function: #4285f4;
+    --syntax-variable: #fa7b17;
+    --syntax-operator: #666666;
+    --syntax-text: #333333;
+}
+
+/* ===== DARK THEMES ===== */
+
+/* Tokyo Night theme */
+[data-theme="tokyo-night"] {
+    --bg-primary: #1a1b26;
+    --bg-secondary: #24283b;
+    --text-primary: #a9b1d6;
+    --text-secondary: #787c99;
+    --accent: #7aa2f7;
+    --accent-light: #2ac3de;
+    --border-color: #3b4261;
+    --user-message-bg: #2e3c64;
+    --assistant-message-bg: #24283b;
+    --sidebar-bg: #16161e;
+    --sidebar-text: #c0caf5;
+    --sidebar-hover: #292e42;
+    --code-bg: #1e202e;
+    --inline-code-bg: #1e202e;
+
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #565f89;
+    --syntax-string: #9ece6a;
+    --syntax-keyword: #bb9af7;
+    --syntax-function: #7aa2f7;
+    --syntax-variable: #e0af68;
+    --syntax-operator: #89ddff;
+    --syntax-text: #a9b1d6;
+}
+
+/* Dracula theme */
+[data-theme="dracula"] {
+    --bg-primary: #282a36;
+    --bg-secondary: #44475a;
+    --text-primary: #f8f8f2;
+    --text-secondary: #bd93f9;
+    --accent: #ff79c6;
+    --accent-light: #6272a4;
+    --border-color: #44475a;
+    --user-message-bg: #44475a;
+    --assistant-message-bg: #282a36;
+    --sidebar-bg: #282a36;
+    --sidebar-text: #f8f8f2;
+    --sidebar-hover: #44475a;
+    --code-bg: #44475a;
+    --inline-code-bg: #44475a;
+
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #6272a4;
+    --syntax-string: #f1fa8c;
+    --syntax-keyword: #ff79c6;
+    --syntax-function: #50fa7b;
+    --syntax-variable: #8be9fd;
+    --syntax-operator: #bd93f9;
+    --syntax-text: #f8f8f2;
+}
+
+/* Nord theme */
+[data-theme="nord"] {
+    --bg-primary: #2e3440;
+    --bg-secondary: #3b4252;
+    --text-primary: #eceff4;
+    --text-secondary: #d8dee9;
+    --accent: #88c0d0;
+    --accent-light: #81a1c1;
+    --border-color: #3b4252;
+    --user-message-bg: #4c566a;
+    --assistant-message-bg: #3b4252;
+    --sidebar-bg: #2e3440;
+    --sidebar-text: #eceff4;
+    --sidebar-hover: #434c5e;
+    --code-bg: #3b4252;
+    --inline-code-bg: #3b4252;
+
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #616e88;
+    --syntax-string: #a3be8c;
+    --syntax-keyword: #b48ead;
+    --syntax-function: #88c0d0;
+    --syntax-variable: #d08770;
+    --syntax-operator: #81a1c1;
+    --syntax-text: #eceff4;
+}
+
+/* Nord Polar Night */
+[data-theme="nord-polar-night"] {
+    --bg-primary: #2e3440;
+    --bg-secondary: #3b4252;
+    --text-primary: #e5e9f0;
+    --text-secondary: #81a1c1;
+    --accent: #88c0d0;
+    --accent-light: #8fbcbb;
+    --border-color: #434c5e;
+    --user-message-bg: #4c566a;
+    --assistant-message-bg: #3b4252;
+    --sidebar-bg: #242932;
+    --sidebar-text: #e5e9f0;
+    --sidebar-hover: #434c5e;
+    --code-bg: #2e3440;
+    --inline-code-bg: #2e3440;
+
+    --syntax-comment: #616e88;
+    --syntax-string: #a3be8c;
+    --syntax-keyword: #81a1c1;
+    --syntax-function: #88c0d0;
+    --syntax-variable: #d08770;
+    --syntax-operator: #b48ead;
+    --syntax-text: #e5e9f0;
+}
+
+/* Monokai theme */
+[data-theme="monokai"] {
+    --bg-primary: #272822;
+    --bg-secondary: #383830;
+    --text-primary: #f8f8f2;
+    --text-secondary: #a6e22e;
+    --accent: #f92672;
+    --accent-light: #ae81ff;
+    --border-color: #383830;
+    --user-message-bg: #3e3d32;
+    --assistant-message-bg: #272822;
+    --sidebar-bg: #272822;
+    --sidebar-text: #f8f8f2;
+    --sidebar-hover: #3e3d32;
+    --code-bg: #3e3d32;
+    --inline-code-bg: #3e3d32;
+
+    /* Syntax highlighting colors for code blocks */
+    --syntax-comment: #75715e;
+    --syntax-string: #e6db74;
+    --syntax-keyword: #f92672;
+    --syntax-function: #a6e22e;
+    --syntax-variable: #66d9ef;
+    --syntax-operator: #ae81ff;
+    --syntax-text: #f8f8f2;
+}
 
 /* Material Dark Theme */
 [data-theme="material-dark"] {
@@ -337,21 +554,32 @@
     --accent-color: #89ddff;
     --link-color: #82aaff;
     --border-color: #37474f;
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    
-    /* Sidebar */
+    --accent: #89ddff;
+    --sidebar-hover: #314549;
     --sidebar-bg: #1e272c;
     --sidebar-text: #eeffff;
+    --accent-light: #34434b;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+
+    /* Sidebar */
     --sidebar-border: #37474f;
     --sidebar-item-hover: #314549;
     --sidebar-item-active: #37474f;
-    
+
     /* Messages */
-    --message-user-bg: #314549;
-    --message-assistant-bg: #1e272c;
+    --user-message-bg: #314549;
+    --assistant-message-bg: #1e272c;
     --code-bg: #1a2327;
     --think-bg: rgba(55, 71, 79, 0.7);
     --code-block-bg: #1a2327;
+
+    --syntax-comment: #546e7a;
+    --syntax-string: #c3e88d;
+    --syntax-keyword: #c792ea;
+    --syntax-function: #82aaff;
+    --syntax-variable: #f07178;
+    --syntax-operator: #89ddff;
+    --syntax-text: #eeffff;
 }
 
 /* One Dark Theme */
@@ -364,20 +592,31 @@
     --link-color: #61afef;
     --border-color: #3b4048;
     --shadow-color: rgba(0, 0, 0, 0.3);
-    
-    /* Sidebar */
+    --accent: #61afef;
+    --sidebar-hover: #2c313a;
     --sidebar-bg: #21252b;
     --sidebar-text: #abb2bf;
+    --accent-light: #78bdfd;
+
+    /* Sidebar */
     --sidebar-border: #3b4048;
     --sidebar-item-hover: #2c313a;
     --sidebar-item-active: #3b4048;
-    
+
     /* Messages */
-    --message-user-bg: #2c313a;
-    --message-assistant-bg: #21252b;
+    --user-message-bg: #2c313a;
+    --assistant-message-bg: #21252b;
     --code-bg: #1e2227;
     --think-bg: rgba(59, 64, 72, 0.7);
     --code-block-bg: #1e2227;
+
+    --syntax-comment: #5c6370;
+    --syntax-string: #98c379;
+    --syntax-keyword: #c678dd;
+    --syntax-function: #61afef;
+    --syntax-variable: #e06c75;
+    --syntax-operator: #56b6c2;
+    --syntax-text: #abb2bf;
 }
 
 /* VS Code Dark Theme */
@@ -390,20 +629,31 @@
     --link-color: #3794ff;
     --border-color: #3c3c3c;
     --shadow-color: rgba(0, 0, 0, 0.4);
-    
-    /* Sidebar */
+    --accent: #0e639c;
+    --sidebar-hover: #2a2d2e;
     --sidebar-bg: #252526;
     --sidebar-text: #d4d4d4;
+    --accent-light: #3794ff;
+
+    /* Sidebar */
     --sidebar-border: #3c3c3c;
     --sidebar-item-hover: #2a2d2e;
     --sidebar-item-active: #37373d;
-    
+
     /* Messages */
-    --message-user-bg: #2a2d2e;
-    --message-assistant-bg: #252526;
+    --user-message-bg: #2a2d2e;
+    --assistant-message-bg: #252526;
     --code-bg: #1e1e1e;
     --think-bg: rgba(60, 60, 60, 0.7);
     --code-block-bg: #1e1e1e;
+
+    --syntax-comment: #6a9955;
+    --syntax-string: #ce9178;
+    --syntax-keyword: #569cd6;
+    --syntax-function: #dcdcaa;
+    --syntax-variable: #9cdcfe;
+    --syntax-operator: #d4d4d4;
+    --syntax-text: #d4d4d4;
 }
 
 /* Deep Ocean Theme */
@@ -412,63 +662,402 @@
     --bg-secondary: #090b10;
     --text-primary: #8f93a2;
     --text-secondary: #717cb4;
-    --accent-color: #84ffff;
+    --accent-color: #373b5e;
     --link-color: #80cbc4;
     --border-color: #1a1c25;
     --shadow-color: rgba(0, 0, 0, 0.5);
-    
-    /* Sidebar */
+    --accent: #2c425d;
+    --sidebar-hover: #131622;
     --sidebar-bg: #090b10;
     --sidebar-text: #8f93a2;
+    --accent-light: #32343b;
+
+    /* Sidebar */
     --sidebar-border: #1a1c25;
     --sidebar-item-hover: #131622;
     --sidebar-item-active: #1a1c25;
-    
+
     /* Messages */
-    --message-user-bg: #131622;
-    --message-assistant-bg: #090b10;
+    --user-message-bg: #131622;
+    --assistant-message-bg: #090b10;
     --code-bg: #070910;
     --think-bg: rgba(26, 28, 37, 0.7);
     --code-block-bg: #070910;
+
+    --syntax-comment: #506686;
+    --syntax-string: #c3e88d;
+    --syntax-keyword: #c792ea;
+    --syntax-function: #82aaff;
+    --syntax-variable: #f07178;
+    --syntax-operator: #89ddff;
+    --syntax-text: #8f93a2;
 }
 
-/* Theme preview styling for all new themes */
-.theme-atom-light .theme-preview-header { background-color: #e5e5e6; }
-.theme-atom-light .theme-preview-sidebar { background-color: #f4f4f4; }
-.theme-atom-light .theme-preview-sidebar-inner { background-color: #e1e2e5; }
-.theme-atom-light .theme-preview-content { background-color: #fafafa; }
+/* Deep Space Theme */
+[data-theme="deep-space"] {
+    --bg-primary: #0a0e14;
+    --bg-secondary: #171b23;
+    --text-primary: #e6e6e6;
+    --text-secondary: #686f89;
+    --accent: #ffcc66;
+    --accent-light: #ffeecc;
+    --border-color: #303540;
+    --user-message-bg: #1d2129;
+    --assistant-message-bg: #171b23;
+    --sidebar-bg: #0d1117;
+    --sidebar-text: #e6e6e6;
+    --sidebar-hover: #252931;
+    --code-bg: #141820;
+    --inline-code-bg: #141820;
 
-.theme-vscode-light .theme-preview-header { background-color: #f3f3f3; }
-.theme-vscode-light .theme-preview-sidebar { background-color: #f3f3f3; }
-.theme-vscode-light .theme-preview-sidebar-inner { background-color: #dcebfc; }
-.theme-vscode-light .theme-preview-content { background-color: #ffffff; }
+    --syntax-comment: #686f89;
+    --syntax-string: #95e6cb;
+    --syntax-keyword: #ffae57;
+    --syntax-function: #5ccfe6;
+    --syntax-variable: #ffcc66;
+    --syntax-operator: #f28779;
+    --syntax-text: #e6e6e6;
+}
 
-.theme-minty-fresh .theme-preview-header { background-color: #e6f7ef; }
-.theme-minty-fresh .theme-preview-sidebar { background-color: #e6f7ef; }
-.theme-minty-fresh .theme-preview-sidebar-inner { background-color: #d1eadc; }
-.theme-minty-fresh .theme-preview-content { background-color: #f5fffa; }
+/* Horizon Dark */
+[data-theme="horizon-dark"] {
+    --bg-primary: #1c1e26;
+    --bg-secondary: #232530;
+    --text-primary: #d5d8da;
+    --text-secondary: #6d707a;
+    --accent: #e95678;
+    --accent-light: #f094a6;
+    --border-color: #2e303e;
+    --user-message-bg: #2e303e;
+    --assistant-message-bg: #232530;
+    --sidebar-bg: #16161c;
+    --sidebar-text: #d5d8da;
+    --sidebar-hover: #2e303e;
+    --code-bg: #1a1c23;
+    --inline-code-bg: #1a1c23;
 
-.theme-lavender-light .theme-preview-header { background-color: #f3f0ff; }
-.theme-lavender-light .theme-preview-sidebar { background-color: #f3f0ff; }
-.theme-lavender-light .theme-preview-sidebar-inner { background-color: #e8e3fa; }
-.theme-lavender-light .theme-preview-content { background-color: #fbfaff; }
+    --syntax-comment: #6d707a;
+    --syntax-string: #09f7a0;
+    --syntax-keyword: #e95678;
+    --syntax-function: #25b0bc;
+    --syntax-variable: #fab795;
+    --syntax-operator: #b877db;
+    --syntax-text: #d5d8da;
+}
 
-.theme-material-dark .theme-preview-header { background-color: #1e272c; }
-.theme-material-dark .theme-preview-sidebar { background-color: #1e272c; }
-.theme-material-dark .theme-preview-sidebar-inner { background-color: #314549; }
-.theme-material-dark .theme-preview-content { background-color: #263238; }
+/* Catppuccin Mocha Theme */
+[data-theme="catppuccin-mocha"] {
+    --bg-primary: #1e1e2e;
+    --bg-secondary: #181825;
+    --text-primary: #cdd6f4;
+    --text-secondary: #a6adc8;
+    --accent: #cba6f7;
+    --accent-light: #f5c2e7;
+    --border-color: #313244;
+    --user-message-bg: #313244;
+    --assistant-message-bg: #1e1e2e;
+    --sidebar-bg: #181825;
+    --sidebar-text: #cdd6f4;
+    --sidebar-hover: #313244;
+    --code-bg: #11111b;
+    --inline-code-bg: #11111b;
 
-.theme-one-dark .theme-preview-header { background-color: #21252b; }
-.theme-one-dark .theme-preview-sidebar { background-color: #21252b; }
-.theme-one-dark .theme-preview-sidebar-inner { background-color: #2c313a; }
-.theme-one-dark .theme-preview-content { background-color: #282c34; }
+    --syntax-comment: #9399b2;
+    --syntax-string: #a6e3a1;
+    --syntax-keyword: #cba6f7;
+    --syntax-function: #89b4fa;
+    --syntax-variable: #f5c2e7;
+    --syntax-operator: #89dceb;
+    --syntax-text: #cdd6f4;
+}
 
-.theme-vscode-dark .theme-preview-header { background-color: #252526; }
-.theme-vscode-dark .theme-preview-sidebar { background-color: #252526; }
-.theme-vscode-dark .theme-preview-sidebar-inner { background-color: #2a2d2e; }
-.theme-vscode-dark .theme-preview-content { background-color: #1e1e1e; }
+/* Gruvbox Dark Theme */
+[data-theme="gruvbox-dark"] {
+    --bg-primary: #282828;
+    --bg-secondary: #1d2021;
+    --text-primary: #ebdbb2;
+    --text-secondary: #bdae93;
+    --accent: #b8bb26;
+    --accent-light: #98971a;
+    --border-color: #3c3836;
+    --user-message-bg: #3c3836;
+    --assistant-message-bg: #282828;
+    --sidebar-bg: #1d2021;
+    --sidebar-text: #ebdbb2;
+    --sidebar-hover: #504945;
+    --code-bg: #32302f;
+    --inline-code-bg: #32302f;
 
-.theme-deep-ocean .theme-preview-header { background-color: #090b10; }
-.theme-deep-ocean .theme-preview-sidebar { background-color: #090b10; }
-.theme-deep-ocean .theme-preview-sidebar-inner { background-color: #131622; }
-.theme-deep-ocean .theme-preview-content { background-color: #0f111a; }
+    --syntax-comment: #928374;
+    --syntax-string: #b8bb26;
+    --syntax-keyword: #fb4934;
+    --syntax-function: #83a598;
+    --syntax-variable: #fabd2f;
+    --syntax-operator: #d3869b;
+    --syntax-text: #ebdbb2;
+}
+
+/* ===== THEME PREVIEW STYLING ===== */
+
+/* Light theme previews */
+.theme-atom-light .theme-preview-header {
+    background-color: #e5e5e6;
+}
+
+.theme-atom-light .theme-preview-sidebar {
+    background-color: #f4f4f4;
+}
+
+.theme-atom-light .theme-preview-sidebar-inner {
+    background-color: #e1e2e5;
+}
+
+.theme-atom-light .theme-preview-content {
+    background-color: #fafafa;
+}
+
+.theme-vscode-light .theme-preview-header {
+    background-color: #f3f3f3;
+}
+
+.theme-vscode-light .theme-preview-sidebar {
+    background-color: #f3f3f3;
+}
+
+.theme-vscode-light .theme-preview-sidebar-inner {
+    background-color: #dcebfc;
+}
+
+.theme-vscode-light .theme-preview-content {
+    background-color: #ffffff;
+}
+
+.theme-minty-fresh .theme-preview-header {
+    background-color: #e6f7ef;
+}
+
+.theme-minty-fresh .theme-preview-sidebar {
+    background-color: #e6f7ef;
+}
+
+.theme-minty-fresh .theme-preview-sidebar-inner {
+    background-color: #d1eadc;
+}
+
+.theme-minty-fresh .theme-preview-content {
+    background-color: #f5fffa;
+}
+
+.theme-lavender-light .theme-preview-header {
+    background-color: #f3f0ff;
+}
+
+.theme-lavender-light .theme-preview-sidebar {
+    background-color: #f3f0ff;
+}
+
+.theme-lavender-light .theme-preview-sidebar-inner {
+    background-color: #e8e3fa;
+}
+
+.theme-lavender-light .theme-preview-content {
+    background-color: #fbfaff;
+}
+
+.theme-everforest-light .theme-preview-header {
+    background-color: #ede5d4;
+}
+
+.theme-everforest-light .theme-preview-sidebar-inner {
+    background-color: #ede5d4;
+}
+
+.theme-everforest-light .theme-preview-content {
+    background-color: #fff9e8;
+}
+
+.theme-paper .theme-preview-header {
+    background-color: #f1f3f4;
+}
+
+.theme-paper .theme-preview-sidebar-inner {
+    background-color: #f1f3f4;
+}
+
+.theme-paper .theme-preview-content {
+    background-color: #f8f8f8;
+}
+
+.theme-rose-pine-dawn .theme-preview-header {
+    background-color: #f2e9e1;
+}
+
+.theme-rose-pine-dawn .theme-preview-sidebar-inner {
+    background-color: #f2e9e1;
+}
+
+.theme-rose-pine-dawn .theme-preview-content {
+    background-color: #faf4ed;
+}
+
+.theme-rose-pine-dawn .theme-name {
+    background-color: #fffaf3;
+    color: #575279;
+}
+
+.theme-ayu-light .theme-preview-header {
+    background-color: #e7e7e7;
+}
+
+.theme-ayu-light .theme-preview-sidebar-inner {
+    background-color: #e7e7e7;
+}
+
+.theme-ayu-light .theme-preview-content {
+    background-color: #fafafa;
+}
+
+.theme-ayu-light .theme-name {
+    background-color: #f3f3f3;
+    color: #5c6166;
+}
+
+/* Dark theme previews */
+.theme-material-dark .theme-preview-header {
+    background-color: #1e272c;
+}
+
+.theme-material-dark .theme-preview-sidebar {
+    background-color: #1e272c;
+}
+
+.theme-material-dark .theme-preview-sidebar-inner {
+    background-color: #314549;
+}
+
+.theme-material-dark .theme-preview-content {
+    background-color: #263238;
+}
+
+.theme-one-dark .theme-preview-header {
+    background-color: #21252b;
+}
+
+.theme-one-dark .theme-preview-sidebar {
+    background-color: #21252b;
+}
+
+.theme-one-dark .theme-preview-sidebar-inner {
+    background-color: #2c313a;
+}
+
+.theme-one-dark .theme-preview-content {
+    background-color: #282c34;
+}
+
+.theme-vscode-dark .theme-preview-header {
+    background-color: #252526;
+}
+
+.theme-vscode-dark .theme-preview-sidebar {
+    background-color: #252526;
+}
+
+.theme-vscode-dark .theme-preview-sidebar-inner {
+    background-color: #2a2d2e;
+}
+
+.theme-vscode-dark .theme-preview-content {
+    background-color: #1e1e1e;
+}
+
+.theme-deep-ocean .theme-preview-header {
+    background-color: #090b10;
+}
+
+.theme-deep-ocean .theme-preview-sidebar {
+    background-color: #090b10;
+}
+
+.theme-deep-ocean .theme-preview-sidebar-inner {
+    background-color: #131622;
+}
+
+.theme-deep-ocean .theme-preview-content {
+    background-color: #0f111a;
+}
+
+.theme-deep-ocean .theme-name {
+    background-color: #090b10;
+    color: #8f93a2;
+}
+
+.theme-horizon-dark .theme-preview-header {
+    background-color: #16161c;
+}
+
+.theme-horizon-dark .theme-preview-sidebar-inner {
+    background-color: #16161c;
+}
+
+.theme-horizon-dark .theme-preview-content {
+    background-color: #1c1e26;
+}
+
+.theme-nord-polar-night .theme-preview-header {
+    background-color: #242932;
+}
+
+.theme-nord-polar-night .theme-preview-sidebar-inner {
+    background-color: #242932;
+}
+
+.theme-nord-polar-night .theme-preview-content {
+    background-color: #2e3440;
+}
+
+.theme-deep-space .theme-preview-header {
+    background-color: #0d1117;
+}
+
+.theme-deep-space .theme-preview-sidebar-inner {
+    background-color: #0d1117;
+}
+
+.theme-deep-space .theme-preview-content {
+    background-color: #0a0e14;
+}
+
+.theme-catppuccin-mocha .theme-preview-header {
+    background-color: #181825;
+}
+
+.theme-catppuccin-mocha .theme-preview-sidebar-inner {
+    background-color: #181825;
+}
+
+.theme-catppuccin-mocha .theme-preview-content {
+    background-color: #1e1e2e;
+}
+
+.theme-catppuccin-mocha .theme-name {
+    background-color: #313244;
+    color: #cdd6f4;
+}
+
+.theme-gruvbox-dark .theme-preview-header {
+    background-color: #1d2021;
+}
+
+.theme-gruvbox-dark .theme-preview-sidebar-inner {
+    background-color: #1d2021;
+}
+
+.theme-gruvbox-dark .theme-preview-content {
+    background-color: #282828;
+}
+
+.theme-gruvbox-dark .theme-name {
+    background-color: #3c3836;
+    color: #ebdbb2;
+}
