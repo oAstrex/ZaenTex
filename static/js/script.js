@@ -180,6 +180,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Function to process reasoning markers and convert them to HTML
+    function processReasoningMarkers(text) {
+        return text.replace(
+            /\[REASONING_START\](.*?)\[REASONING_END\]/gs,
+            '<details><summary><em>Model reasoning (click to expand)</em></summary><div class="reasoning-content">$1</div></details>'
+        );
+    }
+
     // Elements
     const chatList = document.getElementById('chat-list');
     const messageForm = document.getElementById('message-form');
@@ -457,15 +465,18 @@ document.addEventListener('DOMContentLoaded', () => {
         // Scroll to bottom
         messagesContainer.scrollTop = messagesContainer.scrollHeight;
     }
-    
+
     function createMessageElement(message) {
         const messageDiv = document.createElement('div');
         messageDiv.className = `message ${message.sender === 'user' ? 'user-message' : 'assistant-message'}`;
-        
+
         let content = message.content;
-        
+
         // Handle think blocks if reasoning is enabled
         if (message.sender === 'assistant') {
+            // PROCESS REASONING MARKERS FIRST
+            content = processReasoningMarkers(content);
+
             if (reasoningToggle.checked) {
                 // Format think blocks first
                 let thinkBlocks = [];
@@ -473,11 +484,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     thinkBlocks.push(thinking);
                     return `<think-placeholder-${thinkBlocks.length - 1}/>`;
                 });
-                
+
                 // Apply markdown if available
                 if (isMarkedLoaded) {
                     content = marked.parse(content);
-                    
+
                     // Put think blocks back
                     thinkBlocks.forEach((block, i) => {
                         const thinkContent = isMarkedLoaded ? marked.parse(block) : block;
@@ -490,7 +501,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     // Just put the think blocks back directly
                     thinkBlocks.forEach((block, i) => {
                         content = content.replace(
-                            `<think-placeholder-${i}/>`, 
+                            `<think-placeholder-${i}/>`,
                             `<div class="think-block">${block}</div>`
                         );
                     });
@@ -507,21 +518,21 @@ document.addEventListener('DOMContentLoaded', () => {
             // For user messages, just render markdown if available
             content = marked.parse(content);
         }
-        
+
         messageDiv.innerHTML = `
-            <div class="message-header">
-                <strong>${message.sender === 'user' ? 'You' : 'Assistant'}</strong>
-            </div>
-            <div class="message-content">${content}</div>
-        `;
-        
+        <div class="message-header">
+            <strong>${message.sender === 'user' ? 'You' : 'Assistant'}</strong>
+        </div>
+        <div class="message-content">${content}</div>
+    `;
+
         // Apply syntax highlighting to code blocks if both libraries are loaded
         if (isMarkedLoaded && isHljsLoaded) {
             messageDiv.querySelectorAll('pre code').forEach((block) => {
                 hljs.highlightElement(block);
             });
         }
-        
+
         return messageDiv;
     }
     
@@ -713,15 +724,19 @@ document.addEventListener('DOMContentLoaded', () => {
                                     }
                                     return;
                                 }
-                                
+
                                 if (parsedData.delta) {
                                     fullResponse += parsedData.delta;
-                                    
+
                                     // Update the assistant message in real-time
                                     if (assistantContent) {
                                         let displayContent = fullResponse;
+
+                                        // PROCESS REASONING MARKERS FIRST (before any other processing)
+                                        displayContent = processReasoningMarkers(displayContent);
+
                                         let tempContent = displayContent;
-                                        
+
                                         // Handle think blocks and markdown
                                         if (showReasoning) {
                                             // Format think blocks
@@ -730,11 +745,11 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 thinkBlocks.push(thinking);
                                                 return `<think-placeholder-${thinkBlocks.length - 1}/>`;
                                             });
-                                            
+
                                             // Apply markdown if available
                                             if (isMarkedLoaded) {
                                                 tempContent = marked.parse(tempContent);
-                                                
+
                                                 // Put think blocks back
                                                 thinkBlocks.forEach((block, i) => {
                                                     const thinkContent = isMarkedLoaded ? marked.parse(block) : block;
@@ -747,7 +762,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 // Just put the think blocks back directly
                                                 thinkBlocks.forEach((block, i) => {
                                                     tempContent = tempContent.replace(
-                                                        `<think-placeholder-${i}/>`, 
+                                                        `<think-placeholder-${i}/>`,
                                                         `<div class="think-block">${block}</div>`
                                                     );
                                                 });
@@ -760,17 +775,17 @@ document.addEventListener('DOMContentLoaded', () => {
                                                 tempContent = marked.parse(tempContent);
                                             }
                                         }
-                                        
+
                                         // Update the content
                                         assistantContent.innerHTML = tempContent || '<div class="spinner"></div>';
-                                        
+
                                         // Apply syntax highlighting if available
                                         if (isHljsLoaded && isMarkedLoaded) {
                                             assistantContent.querySelectorAll('pre code').forEach((block) => {
                                                 hljs.highlightElement(block);
                                             });
                                         }
-                                        
+
                                         // Add copy buttons to new code blocks
                                         addCopyButtonsToCodeBlocks();
 

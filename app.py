@@ -178,16 +178,14 @@ def chat():
                             in_reasoning = False
                             reasoning = " ".join(reasoning_buffer)
                             reasoning_buffer = []
-                            
-                            return (
-                                f'<details><summary><em>Model reasoning (click to expand)</em></summary>'
-                                f'<div>{reasoning}</div></details>'
-                            )
+
+                            # Use markers instead of raw HTML
+                            return f"[REASONING_START]{reasoning}[REASONING_END]"
                         else:
                             reasoning_buffer.append(word)
                             return ""
                     else:
-                        return word 
+                        return word
                 try:
                     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=ssl_context)) as session:
                         print("Sending request to LLM API...")
@@ -292,4 +290,4 @@ if __name__ == '__main__':
     else:
         print("CHUTES_API_TOKEN environment variable is set.")
     
-    app.run(debug=True, host="0.0.0.0", port=8080)
+    app.run(debug=True, host="0.0.0.0", port=5000)
