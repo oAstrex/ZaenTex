@@ -1,10 +1,4 @@
 flask
 aiohttp
 asyncio
-os
-ssl
 certifi
-json
-re
-threading
-queue
